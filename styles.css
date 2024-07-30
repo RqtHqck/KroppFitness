@@ -98,7 +98,7 @@ svg * {
 button {
   /* Чтобы можно было примернить height */
   display: inline-flex;
-  height:38px;
+  /* height:38px; */
   align-items: center;
   padding-inline: 26px;
   white-space: nowrap;
@@ -109,10 +109,6 @@ button {
   background-color: var(--color-light);
   border: none;
   border-radius: var(--border-radius);
-}
-
-button:hover {
-  background-color: var(--color-light-gray);
 }
 
 
@@ -181,11 +177,96 @@ h1,h2,h3,h4,h5,h6 {
   padding: 0;
   color: var(--color-light);
 }
-
+.header-book-button:hover{
+  background-color: var(--color-light-gray);
+}
 .header-burger-button:hover {
   border-color: var(--color-light-gray);
   background-color: transparent;
 }
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 985px;
+  padding:  36px 70px;
+  color: var(--color-light);
+  background-color: var(--color-dark-alternate);
+}
+
+.banner-body {
+  text-transform: uppercase;
+}
+
+.banner-info {
+  display: flex;
+  align-items: end;
+  font-size: 38px;
+  line-height:1.3;
+  font-weight: 700;
+}
+
+.banner-info::before {
+  bottom: 10px;
+  content:"";
+  width: 194px;
+  height: 194px;
+  background: url('./icons/bold-arrow.svg') center/contain no-repeat;
+  margin-right: 30px;
+}
+
+.banner-title {
+  font-size: 360px;
+  line-height:1;
+}
+
+.banner-pagination {
+  padding-top: 10px;
+}
+
+.banner-pagination-list {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-pagination-item {
+  display: flex;
+}
+
+.banner-pagination-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  background-color: transparent;  
+  border: none;
+}
+
+.banner-pagination-button::after {
+  content: "";
+  width: 12px;
+  aspect-ratio: 1;
+  padding: 0;
+  background-color: transparent;  
+  border: var(--border);
+  border-radius: 50%;
+  transition-duration: var(--transition-duration);
+}
+
+.banner-pagination-button:hover {
+  background-color: none;
+}
+
+.banner-pagination-button.is-current::after {
+  /* Показываем текущий слайд белыми цветом */
+  background-color: var(--color-light);
+}
+
+.banner-pagination-button:not(.is-current):hover::after {
+  border-color: var(--color-light-gray);
+}
+
 
 @media (max-width:1024px) {
   .header {
